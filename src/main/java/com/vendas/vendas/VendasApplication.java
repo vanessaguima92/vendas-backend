@@ -12,6 +12,7 @@ public class VendasApplication {
 		System.out.println("hello");
 
 		System.out.println("commit");
+		System.out.println("teste ao vivo");
 	}
 
 }
