@@ -10,6 +10,8 @@ public class VendasApplication {
 		SpringApplication.run(VendasApplication.class, args);
 
 		System.out.println("hello");
+
+		System.out.println("commit");
 	}
 
 }
