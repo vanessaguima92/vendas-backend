@@ -9,10 +9,6 @@ public class VendasApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VendasApplication.class, args);
 
-		System.out.println("hello");
-
-		System.out.println("commit");
-		System.out.println("teste ao vivo");
 	}
 
 }
