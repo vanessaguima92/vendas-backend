@@ -32,7 +32,6 @@ public class ProdutoService {
 
     public String delete(Long id) throws Exception {
         produtoRespository.deleteById(id);
-
         if(getProdutosById(id).isEmpty()){
             return "Usuario Deletado com sucesso";
         }else {

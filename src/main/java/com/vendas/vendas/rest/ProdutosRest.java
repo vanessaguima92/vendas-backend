@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/produtos")
 public class ProdutosRest {
 
     @Autowired
@@ -24,17 +25,17 @@ public class ProdutosRest {
 
     }
 
-    @GetMapping("/produto")
+    @GetMapping
     public List<Produtos> getProduto(){
         return produtoService.getProdutos();
     }
 
-    @GetMapping("produto/{id}")
+    @GetMapping("/{id}")
     public Optional<Produtos> getProdutoById(@PathVariable Long id){
        return produtoService.getProdutosById(id);
     }
 
-    @DeleteMapping("produtos/{id}")
+    @DeleteMapping("/{id}")
     public String delete (@PathVariable Long id)throws Exception {
         return produtoService.delete(id);
     }
