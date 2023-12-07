@@ -33,7 +33,7 @@ public class ProdutoService {
     public String delete(Long id) throws Exception {
         produtoRespository.deleteById(id);
         if(getProdutosById(id).isEmpty()){
-            return "Usuario Deletado com sucesso";
+            return "Produto Deletado com sucesso";
         }else {
             throw new Exception("falha ao deletar");
         }
