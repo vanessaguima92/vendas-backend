@@ -1,8 +1,6 @@
 package com.vendas.vendas.rest;
 
 import com.vendas.vendas.model.Cliente;
-import com.vendas.vendas.model.Funcionario;
-import com.vendas.vendas.service.ClienteService;
 import com.vendas.vendas.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

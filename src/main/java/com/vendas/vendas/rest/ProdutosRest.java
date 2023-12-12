@@ -34,6 +34,12 @@ public class ProdutosRest {
        return produtoService.getProdutosById(id);
     }
 
+    @GetMapping("nome/{nome}")
+    public Optional<Produtos> getProdutoByNome(@PathVariable String nome){
+        return produtoService.getProdutosByNome(nome);
+    }
+
+
     @DeleteMapping("/{id}")
     public String delete (@PathVariable Long id)throws Exception {
         return produtoService.delete(id);

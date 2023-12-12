@@ -14,7 +14,7 @@ public class ProdutoService {
     @Autowired
     ProdutoRespository produtoRespository;
     public Produtos salvar(Produtos produtos) throws Exception {
-        if(produtos.getNome() != null || produtos.getQuantidade() !=null){
+        if(verificaProduto(produtos)){
             return produtoRespository.save(produtos);
         }else{
             throw new Exception("Produto esta nullo");
@@ -30,6 +30,10 @@ public class ProdutoService {
         return produtoRespository.findById(id);
     }
 
+    public Optional<Produtos> getProdutosByNome(String nome){
+        return produtoRespository.findByNome(nome);
+    }
+
     public String delete(Long id) throws Exception {
         produtoRespository.deleteById(id);
         if(getProdutosById(id).isEmpty()){
@@ -37,5 +41,9 @@ public class ProdutoService {
         }else {
             throw new Exception("falha ao deletar");
         }
+    }
+
+    private Boolean verificaProduto(Produtos produtos){
+       return produtos.getNome() != null || produtos.getQuantidade() !=null || produtoRespository.findByNome(produtos.getNome()).isEmpty();
     }
 }
